@@ -22,7 +22,7 @@
 
         adjust_layer {
             if-layers = <1 2>;
-            then-layer = <3>;
+            then-layer = <5>;
         };
     };
 
@@ -68,11 +68,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp GRAVE         &kp N1  &kp N2    &kp N3    &kp N4  &kp N5                                     &kp N6   &kp N7  &kp N8     &kp N9    &kp N0    &kp BACKSPACE
-&kp TAB           &kp Q   &kp W     &kp E     &kp R   &kp T                                      &kp Y    &kp U   &kp I      &kp O     &kp P     &kp RETURN
-&kp LEFT_SHIFT    &kp A   &kp S     &kp D     &kp F   &kp G                                      &kp H    &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
-&kp LEFT_CONTROL  &kp Z   &kp X     &kp C     &kp V   &kp B      &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N    &kp M   &kp COMMA  &kp DOT   &kp FSLH  &mo 4
-                          &kp LGUI  &kp LALT  &mo 1   &kp SPACE  &kp ENTER     &kp SPACE         &kp RET  &mo 2   &kp LALT   &kp RGUI
+&kp GRAVE         &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                                  &kp N6  &kp N7      &kp N8     &kp N9    &kp N0    &kp BACKSPACE
+&kp TAB           &kp Q   &kp W     &kp E     &kp R      &kp T                                   &kp Y   &kp U       &kp I      &kp O     &kp P     &kp RETURN
+&kp LEFT_SHIFT    &kp A   &kp S     &kp D     &kp F      &kp G                                   &kp H   &kp J       &kp K      &kp L     &kp SEMI  &kp SQT
+&kp LEFT_CONTROL  &kp Z   &kp X     &kp C     &kp V      &kp B   &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N   &kp M       &kp COMMA  &kp DOT   &kp FSLH  &mo 3
+                          &kp LGUI  &kp LALT  &kp SPACE  &mo 1   &kp ENTER     &kp SPACE         &mo 2   &kp RETURN  &kp LALT   &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -90,11 +90,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&gresc            &kp F1     &kp F2        &kp F3        &kp F4  &kp F5                    &kp F6        &kp F7        &kp F8            &kp F9             &kp F10       &kp F11
-&trans            &kp N1     &kp N2        &kp N3        &kp N4  &kp N5                    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8      &kp NUMBER_9       &kp NUMBER_0  &kp F12
-&kp LEFT_SHIFT    &kp PLUS   &kp MINUS     &trans        &trans  &trans                    &trans        &trans        &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans        &trans
-&kp LEFT_CONTROL  &kp EQUAL  &kp UNDER     &trans        &trans  &trans  &trans    &trans  &trans        &trans        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PIPE      &trans
-                             &kp LEFT_GUI  &kp LEFT_ALT  &trans  &trans  &trans    &trans  &trans        &trans        &trans            &trans
+&gresc  &kp F1     &kp F2     &kp F3  &kp F4  &kp F5                  &kp F6  &kp F7  &kp F8            &kp F9             &kp F10   &kp F11
+&none   &none      &none      &none   &none   &none                   &none   &none   &none             &none              &none     &kp F12
+&trans  &kp PLUS   &kp MINUS  &none   &none   &none                   &none   &none   &kp LEFT_BRACE    &kp RIGHT_BRACE    &none     &none
+&trans  &kp EQUAL  &kp UNDER  &none   &none   &none   &none    &none  &none   &none   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PIPE  &none
+                   &trans     &trans  &none   &none   &none    &none  &none   &none   &none             &none
             >;
 
             sensor-bindings =
@@ -113,14 +113,24 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&gresc          &trans  &trans        &trans        &trans  &trans                      &trans          &trans          &trans        &trans     &kp DEL  &kp BACKSPACE
-&trans          &trans  &trans        &trans        &trans  &trans                      &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END    &trans   &trans
-&kp LEFT_SHIFT  &trans  &trans        &trans        &trans  &kp CLCK                    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &trans   &trans
-&kp LCTRL       &trans  &trans        &trans        &trans  &trans    &trans    &trans  &trans          &trans          &trans        &trans     &trans   &trans
-                        &kp LEFT_GUI  &kp LEFT_ALT  &trans  &trans    &trans    &trans  &trans          &trans          &trans        &trans
+&gresc  &none  &none   &none   &none  &none                     &none           &none           &none         &none      &none  &kp DEL
+&none   &none  &none   &none   &none  &none                     &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END    &none  &none
+&trans  &none  &none   &none   &none  &kp CLCK                  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &none  &none
+&trans  &none  &none   &none   &none  &none     &none    &none  &none           &none           &none         &none      &none  &none
+               &trans  &trans  &none  &none     &none    &none  &none           &none           &none         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        move_window_layer {
+            bindings = <
+&gresc  &kp LC(LA(D))  &kp LC(LA(F))  &kp LC(LA(G))  &kp LC(LA(E))  &kp LC(LA(T))                  &none                        &none  &none  &none                    &none                       &none
+&none   &none          &none          &none          &none          &none                          &none                        &none  &none  &none                    &kp LC(LG(LA(LEFT_ARROW)))  &kp LC(LA(RETURN))
+&trans  &none          &none          &none          &none          &none                          &kp LC(LA(LEFT_ARROW))       &none  &none  &kp LC(LA(RIGHT_ARROW))  &none                       &none
+&trans  &none          &none          &none          &none          &none          &none    &none  &kp LC(LG(LA(RIGHT_ARROW)))  &none  &none  &none                    &none                       &none
+                       &trans         &trans         &none          &none          &none    &none  &none                        &none  &none  &none
+            >;
         };
 
         adjust_layer {
@@ -141,16 +151,6 @@
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-        };
-
-        macos_move_window_layer {
-            bindings = <
-&gresc            &kp LC(LA(D))  &kp LC(LA(F))  &kp LC(LA(G))  &kp LC(LA(E))  &kp LC(LA(T))                  &none                        &none  &none  &none                    &none                       &none
-&none             &none          &none          &none          &none          &none                          &none                        &none  &none  &none                    &kp LC(LG(LA(LEFT_ARROW)))  &kp LC(LA(RETURN))
-&kp LEFT_SHIFT    &none          &none          &none          &none          &none                          &kp LC(LA(LEFT_ARROW))       &none  &none  &kp LC(LA(RIGHT_ARROW))  &none                       &none
-&kp LEFT_CONTROL  &none          &none          &none          &none          &none          &none    &none  &kp LC(LG(LA(RIGHT_ARROW)))  &none  &none  &none                    &none                       &none
-                                 &kp LEFT_GUI   &kp LEFT_ALT   &none          &none          &none    &none  &none                        &none  &none  &none
-            >;
         };
     };
 };
