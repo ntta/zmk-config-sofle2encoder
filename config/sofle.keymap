@@ -20,9 +20,9 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
-        adjust_layer {
+        bluetooth_layer {
             if-layers = <1 2>;
-            then-layer = <5>;
+            then-layer = <4>;
         };
     };
 
@@ -58,7 +58,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "Base";
+            display-name = "Default";
 
             // ------------------------------------------------------------------------------------------------------------
             // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
@@ -78,7 +78,7 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        lower_layer {
+        symbols_layer {
             display-name = "Symbols";
 
             // TODO: Some binds are waiting for shifted keycode support.
@@ -102,7 +102,7 @@
                 <&inc_dec_kp UP_ARROW DOWN_ARROW>;
         };
 
-        raise_layer {
+        nav_layer {
             display-name = "Nav";
 
             // ------------------------------------------------------------------------------------------------------------
@@ -123,7 +123,7 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        move_window_layer {
+        window_move_layer {
             bindings = <
 &gresc  &kp LC(LA(D))       &kp LC(LA(F))  &kp LC(LA(G))        &kp LC(LA(E))  &kp LC(LA(T))                  &none                        &none  &none  &none                    &none                       &none
 &none   &none               &none          &none                &none          &none                          &none                        &none  &none  &none                    &kp LC(LG(LA(LEFT_ARROW)))  &kp LC(LA(RETURN))
@@ -131,9 +131,11 @@
 &trans  &none               &none          &none                &none          &none          &none    &none  &kp LC(LG(LA(RIGHT_ARROW)))  &none  &none  &none                    &none                       &none
                             &trans         &trans               &none          &none          &none    &none  &none                        &none  &none  &none
             >;
+
+            label = "Window Move";
         };
 
-        adjust_layer {
+        bluetooth_layer {
             // ----------------------------------------------------------------------------------------------------------------------------
             // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
             // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
@@ -141,9 +143,9 @@
             // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
             //                    |         |         |         |         |         | |      |      |      |       |      |
 
-            display-name = "System";
+            display-name = "Bluetooth";
             bindings = <
-&bt BT_CLR_ALL     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &none  &none  &none  &none  &none  &none
+&none              &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &none  &none  &none  &none  &none  &bt BT_CLR_ALL
 &ext_power EP_TOG  &none         &none         &none         &none         &studio_unlock                  &none  &none  &none  &none  &none  &none
 &none              &none         &none         &none         &none         &none                           &none  &none  &none  &none  &none  &none
 &none              &none         &none         &none         &none         &caps_word      &none    &none  &none  &none  &none  &none  &none  &none
