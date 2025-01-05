@@ -125,11 +125,11 @@
 
         move_window_layer {
             bindings = <
-&gresc  &kp LC(LA(D))  &kp LC(LA(F))  &kp LC(LA(G))  &kp LC(LA(E))  &kp LC(LA(T))                  &none                        &none  &none  &none                    &none                       &none
-&none   &none          &none          &none          &none          &none                          &none                        &none  &none  &none                    &kp LC(LG(LA(LEFT_ARROW)))  &kp LC(LA(RETURN))
-&trans  &none          &none          &none          &none          &none                          &kp LC(LA(LEFT_ARROW))       &none  &none  &kp LC(LA(RIGHT_ARROW))  &none                       &none
-&trans  &none          &none          &none          &none          &none          &none    &none  &kp LC(LG(LA(RIGHT_ARROW)))  &none  &none  &none                    &none                       &none
-                       &trans         &trans         &none          &none          &none    &none  &none                        &none  &none  &none
+&gresc  &kp LC(LA(D))       &kp LC(LA(F))  &kp LC(LA(G))        &kp LC(LA(E))  &kp LC(LA(T))                  &none                        &none  &none  &none                    &none                       &none
+&none   &none               &none          &none                &none          &none                          &none                        &none  &none  &none                    &kp LC(LG(LA(LEFT_ARROW)))  &kp LC(LA(RETURN))
+&trans  &kp LG(LEFT_ARROW)  &none          &kp LG(RIGHT_ARROW)  &none          &none                          &kp LC(LA(LEFT_ARROW))       &none  &none  &kp LC(LA(RIGHT_ARROW))  &none                       &none
+&trans  &none               &none          &none                &none          &none          &none    &none  &kp LC(LG(LA(RIGHT_ARROW)))  &none  &none  &none                    &none                       &none
+                            &trans         &trans               &none          &none          &none    &none  &none                        &none  &none  &none
             >;
         };
 
